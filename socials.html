@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logos | Kiba</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+}
+
+body{
+background:#0f0f14;
+color:white;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+body::before{
+content:"";
+position:fixed;
+width:150%;
+height:150%;
+background:linear-gradient(45deg,#6a00ff,#00e5ff,#ff0066,#6a00ff);
+background-size:400% 400%;
+animation:gradient 15s ease infinite;
+filter:blur(120px);
+opacity:0.25;
+z-index:-1;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.1);
+z-index:1000;
+}
+
+nav h1{
+font-weight:800;
+letter-spacing:2px;
+}
+
+.back-btn{
+padding:10px 20px;
+background:#00e5ff;
+border:none;
+border-radius:25px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.back-btn:hover{
+transform:scale(1.08);
+}
+
+/* PAGE CONTENT */
+.container{
+padding:140px 8% 80px 8%;
+}
+
+h2{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+}
+
+/* Masonry Grid */
+.grid{
+column-count:3;
+column-gap:25px;
+}
+
+.grid img{
+width:100%;
+margin-bottom:25px;
+border-radius:18px;
+break-inside:avoid;
+background:rgba(255,255,255,0.05);
+padding:10px;
+transition:.4s;
+}
+
+.grid img:hover{
+transform:scale(1.04);
+background:rgba(255,255,255,0.08);
+}
+
+/* Responsive */
+@media(max-width:1000px){
+.grid{column-count:2;}
+}
+
+@media(max-width:600px){
+.grid{column-count:1;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>KIBA</h1>
+<button class="back-btn" onclick="window.location.href='index.html'">
+← Back to Home
+</button>
+</nav>
+
+<div class="container">
+
+<h2>Post Designs</h2>
+
+<div class="grid">
+<img src="Post1.png">
+<img src="post2.png">
+<img src="post3.png">
+<img src="post4.png">
+<img src="post5.png">
+
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiba | Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif;}
+body{background:#0f0f14;color:#fff;overflow-x:hidden;scroll-behavior:smooth;}
+
+/* Background Glow */
+body::before{
+content:"";
+position:fixed;
+width:150%;
+height:150%;
+background:linear-gradient(45deg,#6a00ff,#00e5ff,#ff0066,#6a00ff);
+background-size:400% 400%;
+animation:gradient 15s ease infinite;
+filter:blur(120px);
+opacity:0.25;
+z-index:-1;
+}
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.1);
+z-index:1000;
+}
+nav h1{font-weight:800;letter-spacing:2px;}
+nav ul{display:flex;gap:30px;list-style:none;}
+nav a{text-decoration:none;color:#fff;font-weight:300;transition:.3s;}
+nav a:hover{color:#00e5ff;}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+}
+
+.hero h2{
+font-size:60px;
+font-weight:800;
+background:linear-gradient(to right,#fff,#00e5ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero h3{
+margin-top:10px;
+font-weight:400;
+opacity:0.8;
+}
+
+.software-icons{
+margin-top:20px;
+display:flex;
+gap:20px;
+font-size:28px;
+opacity:0.8;
+}
+
+.hero p{
+margin-top:20px;
+max-width:600px;
+opacity:0.7;
+}
+
+.hero button{
+margin-top:40px;
+padding:14px 30px;
+background:#00e5ff;
+border:none;
+border-radius:30px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+.hero button:hover{transform:scale(1.1);}
+
+/* SECTIONS */
+section{padding:120px 8%;}
+.section-title{text-align:center;font-size:36px;margin-bottom:60px;}
+
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.category-card{
+padding:60px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+text-align:center;
+cursor:pointer;
+transition:.4s;
+}
+.category-card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,0.08);
+}
+
+/* TESTIMONIALS */
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.testimonial{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.testimonial img{
+width:70px;
+height:70px;
+border-radius:50%;
+margin-bottom:15px;
+object-fit:cover;
+}
+
+.testimonial h4{margin-top:10px;font-weight:600;}
+.testimonial p{font-size:14px;opacity:0.7;margin-top:10px;}
+
+/* CONTACT */
+.contact-form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+.contact-form input,
+.contact-form textarea{
+padding:15px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:10px;
+color:white;
+}
+.contact-form button{
+padding:14px;
+background:#00e5ff;
+border:none;
+border-radius:30px;
+font-weight:600;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.1);
+opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>M Sameed</h1>
+<ul>
+<li><a href="#work">Work</a></li>
+<li><a href="#testimonials">Testimonials</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+<h2>Muhammad Sameed</h2>
+<h3>Graphic Designer | Brand Identity Specialist</h3>
+
+<div class="software-icons">
+<i class="fab fa-adobe"></i>
+<i class="fas fa-pen-nib"></i>
+<i class="fas fa-vector-square"></i>
+</div>
+
+<p>
+I design bold visual identities, modern logos, social media creatives and banners that help brands stand out in competitive markets.
+</p>
+
+<button onclick="document.getElementById('work').scrollIntoView()">View Projects</button>
+</div>
+
+<section id="work">
+<h2 class="section-title">Explore My Work</h2>
+<div class="category-grid">
+<div class="category-card" onclick="location.href='logos.html'">
+<h3>Logos</h3>
+</div>
+<div class="category-card" onclick="location.href='banners.html'">
+<h3>Banners</h3>
+</div>
+<div class="category-card" onclick="location.href='social.html'">
+<h3>Social Media Posts</h3>
+</div>
+</div>
+</section>
+
+
+
+
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Let’s Work Together</h2>
+<form class="contact-form">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+<footer>
+© 2026 Kiba Rahman. All Rights Reserved.
+</footer>
+
+</body>
+</html>
